@@ -1,7 +1,3 @@
-Here's a rewritten `README.md` that includes setup instructions, descriptions of the technologies used, and the functionality of your "Rendezvous Restaurant" project:
-
----
-
 # Rendezvous Restaurant Website
 
 The **Rendezvous Restaurant Website** is a full-stack web application built to simulate a restaurant ordering system. Users can browse the menu, add items to their cart, and make reservations. The system includes both a frontend for user interaction and a backend for data management using MySQL.
