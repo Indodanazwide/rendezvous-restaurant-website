@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-export const authenticaToken = (res, res, next) => {
+export const authenticateToken = (req, res, next) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
 
@@ -14,6 +14,9 @@ export const authenticaToken = (res, res, next) => {
         console.log('Authenticated user:', req.user);
         next();
     } catch (error) {
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ error: 'Token expired' });
+        }
         return res.status(403).json({ error: 'Invalid token' });
     }
 };
